@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const expandableContent = document.querySelector('.expandable-content');
 
     expandableSection.addEventListener('click', function() {
-        expandableContent.style.display = expandableContent.style.display === 'none' ? 'block' : 'none';
+        expandableContent.classList.toggle('active');
     });
 });
 
