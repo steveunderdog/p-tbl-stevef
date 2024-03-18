@@ -1,88 +1,94 @@
 <script>
+    // JavaScript for tab switching
     document.addEventListener('DOMContentLoaded', function() {
-            const planOptionsSteveF = document.querySelectorAll('.plan-option[data-plan]');
-            const planContentsSteveF = document.querySelectorAll('.plan-content[data-plan]');
+        const planOptions = document.querySelectorAll('.plan-option');
+        const planContents = document.querySelectorAll('.plan-content');
 
-            function setActivePlanSteveF(plan) {
-                planOptionsSteveF.forEach(option => {
-                    option.classList.toggle('selected', option.getAttribute('data-plan') === plan);
-                });
-                planContentsSteveF.forEach(content => {
-                    content.classList.toggle('active', content.getAttribute('data-plan') === plan);
-                });
-            }
+        planOptions.forEach(function(option) {
+            option.addEventListener('click', function() {
+                const selectedPlan = this.getAttribute('data-plan');
 
-            planOptionsSteveF.forEach(option => {
-                option.addEventListener('click', () => {
-                    const selectedPlanSteveF = option.getAttribute('data-plan');
-                    setActivePlanSteveF(selectedPlanSteveF);
+                // Update 'selected' class for options
+                planOptions.forEach(function(option) {
+                    option.classList.remove('selected');
+                });
+                this.classList.add('selected');
+
+                // Toggle 'active' class for contents
+                planContents.forEach(function(content) {
+                    if (content.getAttribute('data-plan') === selectedPlan) {
+                        content.classList.add('active');
+                    } else {
+                        content.classList.remove('active');
+                    }
                 });
             });
         });
+    });
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const expandableSectionSteveF = document.querySelector('.expandable-section');
-            const expandableContentSteveF = document.querySelector('.expandable-content');
+    document.addEventListener('DOMContentLoaded', function() {
+        const expandableSection = document.querySelector('.expandable-section');
+        const expandableContent = document.querySelector('.expandable-content');
 
-            expandableSectionSteveF.addEventListener('click', function() {
-                expandableContentSteveF.classList.toggle('active');
-            });
+        expandableSection.addEventListener('click', function() {
+            expandableContent.classList.toggle('active');
+        });
+    });
+
+    // JavaScript for opening schedule embed and hiding package details
+    document.addEventListener('DOMContentLoaded', function() {
+        const founder15BookNowBtnSteve = document.getElementById('founder15-book-now-steve');
+        const founder15ScheduleEmbedSteve = document.getElementById('founder15-schedule-embed-steve');
+        const founder15PackageDetailsSteve = document.getElementById('founder15-package-details-steve');
+        const founder15BackToFeaturesSteve = document.getElementById('founder15-back-to-features-steve');
+
+        founder15BookNowBtnSteve.addEventListener('click', function(event) {
+            event.preventDefault();
+            founder15ScheduleEmbedSteve.style.display = 'block';
+            founder15PackageDetailsSteve.style.display = 'none';
+            founder15BackToFeaturesSteve.style.display = 'block';
         });
 
-        // JavaScript for opening schedule embed and hiding package details
-        document.addEventListener('DOMContentLoaded', function() {
-            const founder15BookNowBtnSteveF = document.getElementById('founder15-book-now');
-            const founder15ScheduleEmbedSteveF = document.getElementById('founder15-schedule-embed');
-            const founder15PackageDetailsSteveF = document.getElementById('founder15-package-details');
-            const founder15BackToFeaturesSteveF = document.getElementById('founder15-back-to-features');
-
-            founder15BookNowBtnSteveF.addEventListener('click', function(event) {
-                event.preventDefault();
-                founder15ScheduleEmbedSteveF.style.display = 'block';
-                founder15PackageDetailsSteveF.style.display = 'none';
-                founder15BackToFeaturesSteveF.style.display = 'block';
-            });
-
-            founder15BackToFeaturesSteveF.addEventListener('click', function() {
-                founder15ScheduleEmbedSteveF.style.display = 'none';
-                founder15PackageDetailsSteveF.style.display = 'block';
-                founder15BackToFeaturesSteveF.style.display = 'none';
-            });
-
-            const growthBookNowBtnSteveF = document.getElementById('growth-book-now');
-            const growthScheduleEmbedSteveF = document.getElementById('growth-schedule-embed');
-            const growthPackageDetailsSteveF = document.getElementById('growth-package-details');
-            const growthBackToFeaturesSteveF = document.getElementById('growth-back-to-features');
-
-            growthBookNowBtnSteveF.addEventListener('click', function(event) {
-                event.preventDefault();
-                growthScheduleEmbedSteveF.style.display = 'block';
-                growthPackageDetailsSteveF.style.display = 'none';
-                growthBackToFeaturesSteveF.style.display = 'block';
-            });
-
-            growthBackToFeaturesSteveF.addEventListener('click', function() {
-                growthScheduleEmbedSteveF.style.display = 'none';
-                growthPackageDetailsSteveF.style.display = 'block';
-                growthBackToFeaturesSteveF.style.display = 'none';
-            });
-
-            const accelerateBookNowBtnSteveF = document.getElementById('accelerate-book-now');
-            const accelerateScheduleEmbedSteveF = document.getElementById('accelerate-schedule-embed');
-            const acceleratePackageDetailsSteveF = document.getElementById('accelerate-package-details');
-            const accelerateBackToFeaturesSteveF = document.getElementById('accelerate-back-to-features');
-
-            accelerateBookNowBtnSteveF.addEventListener('click', function(event) {
-                event.preventDefault();
-                accelerateScheduleEmbedSteveF.style.display = 'block';
-                acceleratePackageDetailsSteveF.style.display = 'none';
-                accelerateBackToFeaturesSteveF.style.display = 'block';
-            });
-
-            accelerateBackToFeaturesSteveF.addEventListener('click', function() {
-                accelerateScheduleEmbedSteveF.style.display = 'none';
-                acceleratePackageDetailsSteveF.style.display = 'block';
-                accelerateBackToFeaturesSteveF.style.display = 'none';
-            });
+        founder15BackToFeaturesSteve.addEventListener('click', function() {
+            founder15ScheduleEmbedSteve.style.display = 'none';
+            founder15PackageDetailsSteve.style.display = 'block';
+            founder15BackToFeaturesSteve.style.display = 'none';
         });
+
+        const growthBookNowBtnSteve = document.getElementById('growth-book-now-steve');
+        const growthScheduleEmbedSteve = document.getElementById('growth-schedule-embed-steve');
+        const growthPackageDetailsSteve = document.getElementById('growth-package-details-steve');
+        const growthBackToFeaturesSteve = document.getElementById('growth-back-to-features-steve');
+
+        growthBookNowBtnSteve.addEventListener('click', function(event) {
+            event.preventDefault();
+            growthScheduleEmbedSteve.style.display = 'block';
+            growthPackageDetailsSteve.style.display = 'none';
+            growthBackToFeaturesSteve.style.display = 'block';
+        });
+
+        growthBackToFeaturesSteve.addEventListener('click', function() {
+            growthScheduleEmbedSteve.style.display = 'none';
+            growthPackageDetailsSteve.style.display = 'block';
+            growthBackToFeaturesSteve.style.display = 'none';
+        });
+
+        const accelerateBookNowBtnSteve = document.getElementById('accelerate-book-now-steve');
+        const accelerateScheduleEmbedSteve = document.getElementById('accelerate-schedule-embed-steve');
+        const acceleratePackageDetailsSteve = document.getElementById('accelerate-package-details-steve');
+        const accelerateBackToFeaturesSteve = document.getElementById('accelerate-back-to-features-steve');
+
+        accelerateBookNowBtnSteve.addEventListener('click', function(event) {
+            event.preventDefault();
+            accelerateScheduleEmbedSteve.style.display = 'block';
+            acceleratePackageDetailsSteve.style.display = 'none';
+            accelerateBackToFeaturesSteve.style.display = 'block';
+        });
+
+        accelerateBackToFeaturesSteve.addEventListener('click', function() {
+            accelerateScheduleEmbedSteve.style.display = 'none';
+            acceleratePackageDetailsSteve.style.display = 'block';
+            accelerateBackToFeaturesSteve.style.display = 'none';
+        });
+    });
 </script>
